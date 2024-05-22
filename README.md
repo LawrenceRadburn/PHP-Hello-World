@@ -14,3 +14,6 @@ PHP has several built-in functions.
 
 ### var_dump()
 I used var_dump() which displays the inputted expression's type and value.
+
+## Assignment Operators
+Using assignment operators can save time when using arithmetic operators on operands.
