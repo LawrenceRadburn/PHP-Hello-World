@@ -54,10 +54,10 @@
             echo '&nbsp&nbsp&nbsp echo "Good Night!";<br>';
             echo "}<br><br>";
             $a = 5;
-            $b = 5
+            $b = 5;
             if ($a == $b) {
                 echo "Good Morning!";
-            };
+            }
         ?>
     </body>
 </html>
