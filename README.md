@@ -4,7 +4,7 @@
 Hypertext Preprossesor (PHP) is a simple scripting language. Simultaneously, PHP can have advanced use-cases.
 
 ## Learning Outcomes
-Using PHP's language construct, I outputting the iconic "Hello World" to the webpage.
+This repository will showcase PHP's basic and intermediate syntax.
 
 ### Outputting
 Using PHP's language construct I outputted text and using echo and print.
