@@ -29,7 +29,6 @@
     echo "<h2>Looping with Conditional Statements</h2>";
     echo "<h2>Array and Array Operators</h2>";
     
-    
     ?>
 </body>
 </html>
