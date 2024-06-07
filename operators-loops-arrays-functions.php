@@ -165,12 +165,274 @@
         }
         
         
+        echo "<h3>Case Switch Statements</h3>";
+        echo "<p>When several conditions are present, the switch statement can return conditional statements faster and help ensure your code looks clean.";
+        echo "<p>The syntax for the switch statement is: </p>";
         
+        echo '$expr = "Gold"';
+        echo "switch (\$expr) {";
+        echo 'case "Bronze":';
+        echo '<br>echo "Not too shabby..."';
+        echo "<br>break;";
+        echo '<br>case "Silver":';
+        echo '<br>echo "What a find!"';
+        echo "<br>break;";
+        echo '<br>case "Gold":';
+        echo '<br>echo "We\'ve struck Gold!"';
+        echo "<br>break;";
+         
+        echo "<p>running switch statement...</p>";
+        
+        switch ($score) {
+            case $score >=90:
+                $grade = "A";
+                echo "<p><mark>Congratulations, your score of $score has earned you an $grade.</mark></p>";
+                break;
+            case $score >= 80 && $score <= 89:
+                $grade = "B";
+                echo "Congrats, your score of $score has earned you a $grade.";
+                break;
+            case $score >= 70 && $score <= 79:
+                $grade = "C";
+                echo "Good work. Your score of $score has earned you a $grade.";
+                break;
+            case $score >=60 && $score <= 69:
+                $grade = "D";
+                echo "Nice try. Your score of $score has earned you a $grade.";
+                break;
+            case $score < 60:
+                $grade = "F";
+                echo "Unfortunately, your score of $score has earned you an $grade.";
+                break;
+        }       
        
         
         
+        echo "<h2><hr>Loops</h2>";
+        echo "<h3While Loops</h3>";
+        
+        echo "<h3>While Loops</h3>";
+        echo "<p>While Loops are a useful way to looping through conditions until the condition is met</p>";
+        
+        echo "<p>The syntax for the while loop is:</p>";
+        echo 'do {<br>';
+        echo '$beginning += 1;<br>';
+        echo 'echo "$beginning"';
+        echo "<br>}";
+        echo '<br>while ($beginning < $ending)<br>';
         
         
+        $beginning = 0;
+        $ending = 10;
+        
+        echo "<p>running loop...</p>";
+        
+        do {
+            $beginning += 1;
+            echo "<br>$beginning";   
+        }
+        while ($beginning < $ending);
+        
+        
+        echo "<h3>Do While Loops</h3>";
+        echo "<p>Do While Loops are another invaluable tool for looping through conditions until the condition is met</p>";
+        echo "<p>Importantly, the do while statement will return one value regardless of whether it is true or not.</p>";
+        
+        echo "<p>The syntax for the do while loop is:</p>";
+        echo 'do {<br>';
+        echo '$begin += 1;<br>';
+        echo 'echo "$begin"';
+        echo "<br>}";
+        echo '<br>while ($begin < $finish)<br>';
+        
+        
+        $begin = 0;
+        $finish = 10;
+        
+        echo "<p>running loop...</p>";
+        
+        do {
+            $begin += 1;
+            echo "<br>$begin";   
+        }
+        while ($begin < $finish);
+        
+        
+        echo "<h3>For Loops</h3>";
+        echo "<p>Loops are an incredible tool to iterate through arrays or increment values as needed.<p>";
+        echo "<p>In this example, I've initialized two variables with the values of 0 and 10.</p>";
+        echo "<p>I will increment 0 until it has reached 10</p>";
+        
+        echo "<p>In this example, the variables are:</p>";
+        echo '<p>$start = 0;</p>';
+        echo '<p>$end = 10;</p>';
+        
+        echo "</p>The syntax for the for loop is:</p>";
+        echo 'for ($start; $start < $end; $start++ {';
+        echo '<br>    echo "$start"';
+        echo "<br>}";
+        
+        $start = 0;
+        $end = 10;
+        
+        echo "<p>running loop...</p>";
+        
+        for ($start; $start <= $end; $start++) {
+            echo "<br>$start";
+        }
+        
+        
+        echo "<h2><hr>Arrays</h2>";
+        echo "<h3>Indexed Arrays</h3>";
+        echo "<p>Index arrays are ordered values that are assigned a 0 based value-based index. Consequently, the first item in an indexed array will be given the value of 0, and each subsequent element's index value will be incremented.</p>";
+        echo "<p>The sytax for the indexed array of the Canadian provices is shown below</p>";
+        
+        echo '<p>$provinces = array)"Alberta, "British Columbia, "etc.");</p>';
+        echo "<p>The syntax for our for each statement that loops through each index array element is as follows:</p>";
+        echo 'for each ($provinces as $x) {<br>';
+        echo 'echo "$x ";';
+        echo "<br>}";
+        echo "<br>";
+        
+        echo "<p>running foreach loop...</p>";
+        
+        $provinces = array("Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Nova Scotia", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan");
+        
+        foreach ($provinces as $x) {
+            echo "$x <br>";
+        }
+        
+        echo "<h3>Array Functions</h3>";
+        echo "<h4>count() function</h4>";
+        echo "<p>By using the count() function on an array, we can return the number of elements inside the array";
+        
+        echo "The number of elements in our array is: ";
+        echo count($provinces);
+        echo "</p>";
+        
+        echo "<h3>Associative Array</h3>";
+        echo "<p>Associative arrays typically contain various elements with key values pairs associated with them.</p>";
+        echo "<p>For example, name=>Lawrence, lastName=>Radburn. Additionally, we can access these elements with their key name</p>";
+        
+        echo "<p>running foreach loop on associative array...</p>";
+        
+        $ter = array("Northwest Territories"=>1143793, "Yukon"=>474712, "Nunavut"=>1877778);
+        foreach ($ter as $y => $z) {
+            echo "$y: $z sq. km<br>";
+        }
+        
+        echo "<h3>2-D Array</h3>";
+        echo "<p>2-D Arrays have at least one additional array nested inside the outer array. This is particularily useful when there are subsets of information.</p>";
+        
+        $terAreaPop = array(
+            array("Northwest Territories", 1143793, 41070),
+            array("Yukon", 474712, 40232),
+            array("Nunavut", 1877778, 36858)
+        );
+        for ($row = 0; $row < count($terAreaPop); $row++) {
+            echo "<p><b>Province</b></p>";
+            echo "<ul>";
+                for ($col = 0; $col < count($terAreaPop[$row]); $col++) {
+                echo "<li>".$terAreaPop[$row][$col]."</li>";
+                }
+            echo "</ul>";
+        }
+        
+        
+        echo "<h3>PHP's Built-in String Functions</h3>";
+        echo "<p>PHP has several built-in string functions. We will go through nine of them</p>";
+        echo '<p>First, we will use the following string: $string = "Life is good." ';
+        
+        echo '<p>$string = "Life is good."</p>';
+        
+        echo "<h4><hr>strlen()</h4>";
+        echo "<p>strlen() returns the length of the string.</p>";
+       
+        
+        $string = "Life is good.";
+        $string2 = "Life is bad.";
+        
+        echo strlen($string);
+        
+        echo "<h4><hr>str_word_count()</h4>";
+        echo "<p>str_word_count() counts the words in a string.</p>";
+        
+        echo str_word_count($string);
+        
+        echo "<h4><hr>strrev()</h4>";
+        echo "<p>strrev() reverses a string.</p>";
+        
+        echo strrev($string);
+        
+        echo "<h4><hr>strpos()</h4>";
+        echo "<p>strpo() searches for a text within a string.</p>";
+        
+        echo strpos($string, "good");
+        
+        echo "<h4><hr>str_replace()</h4>";
+        echo "<p>str_replace() replaces text within a string.</p>";
+        
+        echo str_replace("good", "bad", $string);
+        
+        echo "<h4><hr>strtolower()</h4>";
+        echo "<p>strtolower converts all characters to lowercase.</p>";
+        
+        echo strtolower($string);
+        
+        echo "<h4><hr>strtoupper()</h4>";
+        echo "<p>strtoupper converts all characters to uppercase.</p>";
+        
+        echo strtoupper($string);
+        
+        echo "<h4><hr>ucfirst()</h4>";
+        echo "<p>ucfirst converts the first character of a string to uppercase.</p>";
+        
+        echo ucfirst($string);
+        
+        echo "<h4><hr>ucwords()</h4>";
+        echo "<p>ucwords converts the first character of each word in a string to uppercase.</p>";
+        
+        echo ucwords($string);
+        
+        echo "<h4><hr>strcmp()</h4>";
+        echo "<p>strcmp compares two strings (case-sensitive)</p>";
+        echo "<p>This function will return 1 if the fist string's value is less than the second string. Conversely, the function will return -1 if the second string's value is greater than the first</p>";
+        echo "<p>If the value of the two strings are equal, the function will return 0</p>";
+        
+        echo strcmp($string, $string2);
+        
+        echo "<h3>Grades Function</h3>";
+        echo "<p>Functions are used in PHP to create reusable blocks of code</p>";
+        echo "<p>Below, I've created a function that will accept a value as an arugment and return a grade based on the value.</p>";
+        echo "<p>Because it is a function, I can call the logic using the function name in other parts of the code</p>";
+        echo "<p>Having dynamic code makes writting complex apps faster and less prone to error than hard coding</p>";
+                   
+        echo "<hr><p>initialGrades(85)</p>";
+        echo "<p>Running function...</p>";
+        
+        function initialGrades($score) {
+            if ($score >=90) {
+                $grade = "A";
+                echo "<p>Congratulations, your score of $score has earned you an $grade.</p>";
+            }
+            else if ($score >= 80 && $score <= 89) {
+                $grade = "B";
+                echo "<p><mark>Congrats, your score of $score has earned you a $grade.</mark></p>";
+            }
+            else if ($score >= 70 && $score <= 79) {
+                $grade = "C";
+                echo "Good work. Your score of $score has earned you a $grade.";
+            }
+            else if ($score >=60 && $score <= 69) {
+                $grade = "D";
+                echo "Nice try. Your score of $score has earned you a $grade.";
+            }
+            else if ($score < 60) {
+                $grade = "F";
+                echo "Unfortunately, your score of $score has earned you an $grade.";
+                }       
+            }
+        echo initialGrades(85);
     ?>
     
 </body>
